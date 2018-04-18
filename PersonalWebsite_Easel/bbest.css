@@ -1,0 +1,9 @@
+/*gradient {
+    height: 500px;
+    background: red; /* For browsers that do not support gradients */
+    /*background: linear-gradient(rgba(218,119,152,1), rgba(253,220,170,1)); /* Standard syntax (must be last) */*/
+}*/
+
+body{
+  background-color: purple;
+}

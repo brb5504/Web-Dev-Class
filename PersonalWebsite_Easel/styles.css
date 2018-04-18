@@ -1,0 +1,66 @@
+
+body {
+height: 1000px;
+    background: red; /* For browsers that do not support gradients */
+    background: linear-gradient(rgba(218,119,152,1), rgba(253,220,170,1)); /* Standard syntax (must be last) */
+
+width: 90%;
+margin: 0 auto;}
+#content {overflow: auto;}
+#nav, #feature, #footer {
+	margin: center;}
+.column1, .column2, .column3 {
+	width: 30%;
+	float: left;
+	margin: 1%;}
+.column3 {margin-right: 0%;}
+li {
+	display: inline;
+	padding: 0.5em;}
+	#nav, #footer {
+	padding: 5em 0;}
+#feature, .article {
+	height: 5em;
+	margin-bottom: 1em;
+}
+
+
+
+
+
+
+/*
+.column1of3, .column2of3, .column3of3 {
+	width: 300px;
+	float: left;
+	margin: 10px;
+}
+
+*{
+	font-family: Arial, Verdana, sans-serif;
+	color: #111D3C;
+	text-align: center;
+}
+#nav, #feature, .article, #footer {
+	margin-top 5px;
+	padding: 10px 0px 5px 0px;}
+#feature, .article {
+	height: 75px;}
+	li {
+		display: inline;
+		padding: 5px}
+
+
+
+/* div {
+    width: 300px;
+    border: 25px solid white;
+    padding: 25px;
+    margin: 25px;
+}
+*/*/
+
+/*div {
+    border-width:20px;  
+    border-style:solid;
+}*/
