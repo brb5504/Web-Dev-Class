@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./groupSC.css">
+  </head>
+  <body>
+
+    <nav>
+      <h1 id='title'>Mood Playlist</h1>
+      <button type="button" class="moodBtn" id="happyBtn">Happy</button>
+      <button type="button" class="moodBtn" id="sadBtn">Sad</button>
+    </nav>
+
+    <div class="overlay">
+      <div class="left">
+        <button type="button" class="moodBtn" id="happyBtn">Happy</button>
+      </div>
+      <div class="right">
+        <button type="button" class="moodBtn" id="sadBtn">Sad</button>
+      </div>
+    </div>
+
+    <div class="songCont">
+      <img src="./GroupSCjukebox/photo-1455757618770-0a58b0b28ebd.jpeg" alt="">
+      <img src="./GroupSCjukebox/photo-1518020382113-a7e8fc38eac9.jpeg" alt="">
+
+      <div class="currSongInfo">
+        <h4 class="currTitle"></h4>
+        <h6 class="currArtist"></h6>
+      </div>
+    </div>
+
+
+
+      <div class="button-wrapper">
+        <button type="button" id="play">Play</button>
+        <button type="button" id="pause">Pause</button>
+        <button type="button" id="next">Next</button>
+        <button type="button" id="prev">Prev</button>
+        <button type="button" id="shuf">Shuffle</button>
+
+      </div>
+
+      <div id="playlist-wrapper">
+
+        <ul class="trackHolder">
+          <li class="track"></li>
+          <li class="track"></li>
+          <li class="track"></li>
+          <li class="track"></li>
+        </ul>
+
+        <ul class="trackHolder">
+          <li class="track"></li>
+          <li class="track"></li>
+          <li class="track"></li>
+          <li class="track"></li>
+        </ul>
+
+      </div>
+
+  </body>
+  <footer>
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.3.0.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="./groupSC.js">
+    </script>
+ </footer>
+</html>
