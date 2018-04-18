@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jukebox Starter Kit</title>
+    <style type="text/css">
+        body{
+            width: 80%;
+            background-color: lightblue;
+        }
+        .songs {
+        	display:none;
+        }
+    </style>
+</head>
+<body>
+	 <h1>Brian's Jukebox</h1>
+    <div>
+        <div class="songs">
+         		<select id="song">
+                <option>As - Stevie Wonder</option>
+                <option>Joy Inside My Tears - Stevie Wonder</option>
+                <option>Trus'Us - Trus'Us</option>
+                <option>Biyo - Earth Wind & Fire</option>
+                <option>Wipe Ur Mouth - Demarkus Lewis</option>
+
+            </select><br><br>
+
+
+        </div>
+        <div>
+            	<span id="currentSongTitle"></span>
+		</div>
+        <div>
+            <audio id="jukebox" controls>
+            <source src="" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio><br><br>
+        </div>
+        <div class="controls">
+            <button id="prev">Prev</button>
+            <button id="play">Play</button>
+            <button id="pause">Pause</button>
+            <button id="stop">Stop</button>
+            <button id="next">Next</button>
+            <button id="shuffle">Shuffle</button>
+        </div>
+    </div>
+<script type="text/javascript">
+    
+var jukeSong;
+var song;
+var currentTime = 0;
+const songs = ["As - Stevie Wonder", "Joy Inside My Tears - Stevie Wonder", "Trus'Us - Trus'Us", "Biyo - Earth Wind & Fire", "Wipe Ur Mouth - Demarkus Lewis"];
+var i = 0;
+var jukebox = document.getElementById('jukebox');
+var play = document.getElementById('play');
+var stop = document.getElementById('stop');
+var pause = document.getElementById('pause');
+var prev = document.getElementById('prev');
+var next = document.getElementById('next');
+var currentSongTitle = document.querySelector("#currentSongTitle");
+play.addEventListener("click", function(){
+    var song = document.getElementById('song').value;
+    console.log("play clicked");
+    setInterval(checkEnd, 1000);
+    jukebox.src = song + ".mp3";
+    currentTime;
+    jukebox.currentTime = currentTime;
+    currentSongTitle.innerHTML = songs[i];
+    jukebox.play();
+});
+stop.addEventListener("click", function(){
+    currentTime = 0;
+    jukebox.load();
+});
+pause.addEventListener("click", function(){
+    currentTime = jukebox.currentTime;
+    jukebox.pause();
+});
+prev.addEventListener("click", function(){
+    console.log("prev clicked");
+    prevSong();
+});
+next.addEventListener("click", function(){
+    console.log("next clicked");
+    nextSong();
+});
+function playSong(){
+            jukebox.src = songs[i] + ".mp3";
+            currentSongTitle.innerHTML = songs[i];
+            jukebox.play();
+            setInterval(checkEnd, 1000);
+};
+function checkEnd(){
+            if(jukebox.ended == true){
+                console.log("Song Ended");
+                i++;
+                if(i == songs.length){
+                    jukebox.load();
+                    i=0;
+                }
+                playSong();
+            }
+}
+function nextSong(){
+    i = (i+1)%songs.length;
+currentSongTitle.innerHTML = songs[i];
+    playSong();
+}
+function prevSong(){
+    i = (i-1)%songs.length;
+        console.log(i);
+    if(i == -1){
+    	i = songs.length-1;
+
+	}
+    currentSongTitle.innerHTML = songs[i];
+    playSong();
+}
+const shuffle = document.getElementById("shuffle");
+shuffle.addEventListener("click", function(){
+      var currentIndex = songs.length, temporaryValue, randomIndex;
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    // And swap it with the current element.
+    temporaryValue = songs[currentIndex];
+    songs[currentIndex] = songs[randomIndex];
+    songs[randomIndex] = temporaryValue;
+  }
+  console.log(songs);
+  playSong();
+  //return array;
+})
+
+
+</script>
+</body>
+</html>
